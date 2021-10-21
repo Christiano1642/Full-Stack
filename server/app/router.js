@@ -31,5 +31,12 @@ router.get("/products/:id", async (req, res) =>{
 router.post("/products", async (req, res) =>{
   const createdProduct = await collection.insertOne(req.body)
   res.json(createdProduct);
-}
+});
+
+// TODO: Add router.put() for updating
+
+router.delete("/products", async (req, res) =>{
+  const deletedProduct = await collection.deleteOne({_id: ObjectId(req.body.id),});
+  res.json(deletedProduct);
+});
 export default router;
