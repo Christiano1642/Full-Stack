@@ -7,7 +7,7 @@ dotenv.config();
 export default {
   db: {
     clientURL: process.env.DB_CLIENT_URL,
-    collectionName: "products",
+    collection: "products",
     name: "products",
   },
   port: process.env.PORT || 3000,
